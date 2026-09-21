@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Dune-Weaver Sanal",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 100, "left": 100, "attrs": {} },
+    { "type": "wokwi-a4988", "id": "driver_theta", "top": -50, "left": 300, "attrs": {} },
+    { "type": "wokwi-stepper-motor", "id": "stepper_theta", "top": -150, "left": 450, "attrs": {} },
+    { "type": "wokwi-a4988", "id": "driver_rho", "top": 150, "left": 300, "attrs": {} },
+    { "type": "wokwi-stepper-motor", "id": "stepper_rho", "top": 150, "left": 450, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:GND.1", "driver_theta:GND", "black", [ "v0" ] ],
+    [ "uno:5V", "driver_theta:VDD", "red", [ "v0" ] ],
+    [ "uno:2", "driver_theta:STEP", "green", [ "v0" ] ],
+    [ "uno:3", "driver_theta:DIR", "green", [ "v0" ] ],
+    [ "driver_theta:1A", "stepper_theta:A+", "black", [ "v0" ] ],
+    [ "driver_theta:1B", "stepper_theta:A-", "green", [ "v0" ] ],
+    [ "driver_theta:2A", "stepper_theta:B+", "red", [ "v0" ] ],
+    [ "driver_theta:2B", "stepper_theta:B-", "blue", [ "v0" ] ],
+
+    [ "uno:GND.1", "driver_rho:GND", "black", [ "v0" ] ],
+    [ "uno:5V", "driver_rho:VDD", "red", [ "v0" ] ],
+    [ "uno:4", "driver_rho:STEP", "green", [ "v0" ] ],
+    [ "uno:5", "driver_rho:DIR", "green", [ "v0" ] ],
+    [ "driver_rho:1A", "stepper_rho:A+", "black", [ "v0" ] ],
+    [ "driver_rho:1B", "stepper_rho:A-", "green", [ "v0" ] ],
+    [ "driver_rho:2A", "stepper_rho:B+", "red", [ "v0" ] ],
+    [ "driver_rho:2B", "stepper_rho:B-", "blue", [ "v0" ] ]
+  ]
+}
